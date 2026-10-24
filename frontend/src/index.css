@@ -1,0 +1,111 @@
+@import "@fontsource/inter-tight/400.css";
+@import "@fontsource/inter-tight/500.css";
+@import "@fontsource/inter-tight/600.css";
+@import "@fontsource/inter-tight/700.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/600.css";
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F7F8FA;
+  --surface: #FFFFFF;
+  --surface-subtle: #F0F2F6;
+  --surface-hover: #ECEFF4;
+  --border: #E5E8EE;
+  --border-strong: #D1D5E0;
+  --text: #0B1B33;
+  --muted: #5B6778;
+  --accent: #1F4FD8;
+  --accent-hover: #173DB0;
+  --accent-subtle: #EBF0FC;
+
+  /* Crowd Scale (Colorblind safe) */
+  --crowd-low: #2E9E6B;
+  --crowd-low-subtle: #E8F7F0;
+  --crowd-moderate: #E0A82E;
+  --crowd-moderate-subtle: #FEF7E8;
+  --crowd-high: #E4743B;
+  --crowd-high-subtle: #FDF1EA;
+  --crowd-severe: #C7372F;
+  --crowd-severe-subtle: #FBEAE9;
+}
+
+.dark {
+  --bg: #0C101A;
+  --surface: #141B29;
+  --surface-subtle: #1C2436;
+  --surface-hover: #232D42;
+  --border: #242E44;
+  --border-strong: #33405E;
+  --text: #F1F5F9;
+  --muted: #8E9BAE;
+  --accent: #3B82F6;
+  --accent-hover: #60A5FA;
+  --accent-subtle: #192742;
+
+  /* Crowd Scale (Dark mode) */
+  --crowd-low: #34D399;
+  --crowd-low-subtle: #0B291D;
+  --crowd-moderate: #FBBF24;
+  --crowd-moderate-subtle: #2D230A;
+  --crowd-high: #FB923C;
+  --crowd-high-subtle: #2E1B0E;
+  --crowd-severe: #F87171;
+  --crowd-severe-subtle: #2B1113;
+}
+
+html, body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numbers for operations data */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Scrollbar for dense operations room */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Clean print styling for scenario reports */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* Accessibility: respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

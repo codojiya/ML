@@ -1,0 +1,65 @@
+{
+  "winner": "CatBoost",
+  "rows": {
+    "train": 89760,
+    "validation": 22440,
+    "test": 22440
+  },
+  "metrics": [
+    {
+      "model": "HistoricalAverage",
+      "split": "validation",
+      "MAE": 10.326495908280668,
+      "RMSE": 15.623270441871322,
+      "R2": 0.837687727990673
+    },
+    {
+      "model": "HistoricalAverage",
+      "split": "test",
+      "MAE": 10.066658311051693,
+      "RMSE": 15.227664210625537,
+      "R2": 0.8376325542753102
+    },
+    {
+      "model": "RandomForest",
+      "split": "validation",
+      "MAE": 11.024201047417467,
+      "RMSE": 16.609349987670907,
+      "R2": 0.8165521066251293
+    },
+    {
+      "model": "RandomForest",
+      "split": "test",
+      "MAE": 10.731542606273395,
+      "RMSE": 16.129488466334383,
+      "R2": 0.8178313817272015
+    },
+    {
+      "model": "CatBoost",
+      "split": "validation",
+      "MAE": 10.44691330223768,
+      "RMSE": 15.756358952221769,
+      "R2": 0.8349106004203104
+    },
+    {
+      "model": "CatBoost",
+      "split": "test",
+      "MAE": 10.053287441674414,
+      "RMSE": 15.229984149558344,
+      "R2": 0.8375830770544583
+    }
+  ],
+  "feature_importance": {
+    "station_idx": 11.316323538169135,
+    "dir_int": 6.055542904961283,
+    "hour": 44.64826757725366,
+    "minute": 1.806936163651182,
+    "day_of_week": 1.7850478421607567,
+    "is_weekend": 1.3489938786852882,
+    "is_holiday": 0.3168836971941694,
+    "rainfall_mm": 0.3546815744728855,
+    "event_intensity": 0.11629365001901226,
+    "lag4_arrivals": 32.251029173432634
+  },
+  "note": "Synthetic data: test scores reflect learnability of the generator, NOT real-world accuracy."
+}
