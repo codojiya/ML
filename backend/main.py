@@ -80,6 +80,16 @@ class SweepReq(BaseModel):
     event_intensity: int = Field(0, ge=0, le=2)
     demand_multiplier: float = Field(1.0, gt=0, le=3)
 
+@app.get("/")
+def root():
+    return {
+        "name": "Mumbai CrowdPulse API",
+        "status": "online",
+        "docs": "/docs",
+        "frontend": "http://localhost:5173",
+        "version": "2.0"
+    }
+
 @app.get("/api/health")
 def health():
     return {"status": "ok", "model": BUNDLE["name"], "note": NOTE}

@@ -46,7 +46,7 @@ async function request(endpoint, options = {}) {
   } catch (err) {
     if (err instanceof ApiError) throw err;
     throw new ApiError(
-      'Unable to connect to CrowdPulse backend. Ensure the FastAPI server is running on port 8000.',
+      'Unable to connect to CrowdPulse backend. Ensure the FastAPI server is running on port 8001.',
       0,
       err.message
     );

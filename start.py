@@ -58,9 +58,9 @@ def main():
 
     try:
         # Start FastAPI backend
-        print("[*] Launching FastAPI backend on http://127.0.0.1:8000...")
+        print("[*] Launching FastAPI backend on http://127.0.0.1:8001...")
         backend_proc = subprocess.Popen(
-            [sys.executable, "-m", "uvicorn", "backend.main:app", "--host", "127.0.0.1", "--port", "8000"],
+            [sys.executable, "-m", "uvicorn", "backend.main:app", "--host", "127.0.0.1", "--port", "8001"],
             cwd=str(ROOT),
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
@@ -78,14 +78,14 @@ def main():
             text=True
         )
 
-        backend_ready = wait_for_port(8000, "FastAPI Backend")
+        backend_ready = wait_for_port(8001, "FastAPI Backend")
         frontend_ready = wait_for_port(5173, "Vite Frontend")
 
         if backend_ready and frontend_ready:
             print("\n" + "=" * 65)
             print("[✓] ALL SYSTEMS OPERATIONAL!")
             print("    Control Center UI: http://127.0.0.1:5173")
-            print("    FastAPI API Docs:  http://127.0.0.1:8000/docs")
+            print("    FastAPI API Docs:  http://127.0.0.1:8001/docs")
             print("=" * 65)
             print("[*] Opening default web browser...")
             webbrowser.open("http://127.0.0.1:5173")

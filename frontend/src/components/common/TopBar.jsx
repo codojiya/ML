@@ -162,7 +162,7 @@ export function TopBar() {
         {/* API Status Dot */}
         <div
           className="flex items-center pl-1"
-          title={`Backend API: ${apiStatus === 'ok' ? 'Connected (FastAPI :8000)' : apiStatus === 'error' ? 'Disconnected' : 'Checking...'}`}
+          title={`Backend API: ${apiStatus === 'ok' ? 'Connected (FastAPI :8001)' : apiStatus === 'error' ? 'Disconnected' : 'Checking...'}`}
         >
           <span
             className={`w-2 h-2 rounded-full ${
